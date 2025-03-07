@@ -21,7 +21,7 @@ public class GraphGenerator {
         calculateDegrees();
     }
     
-    private void generateGraph() {
+     private void generateGraph() {
         adjacencyMatrix = new boolean[n][n];
         Random random = new Random();
         
@@ -34,7 +34,13 @@ public class GraphGenerator {
         
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-                if ((i < k && j < k) || (i >= n - k && j >= n - k)) {
+                if (i < k && j < k) {
+                    continue;
+                }
+
+                if (i >= n - k && j >= n - k) {
+                    adjacencyMatrix[i][j] = false;
+                    adjacencyMatrix[j][i] = false;
                     continue;
                 }
                 
