@@ -39,7 +39,7 @@ public class Student extends Person {
 
     @Override
     public boolean equals(Object o) {
-        if (!super.equals(o)) return false;
+        if (o == null || !(o instance of Student)) return false;
         Student student = (Student) o;
         return regNumber == student.regNumber;
     }
