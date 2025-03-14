@@ -50,7 +50,7 @@ public class Teacher extends Person {
      */
     @Override
     public boolean equals(Object o) {
-        if (!super.equals(o)) return false;
+        if (o == null || !(o instanceof Teacher)) return false;
         Teacher teacher = (Teacher) o;
         return Arrays.equals(projects, teacher.projects);
     }
